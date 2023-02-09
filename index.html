@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Davitvu</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/icon/fontawesome-free-6.2.1-web/css/all.css">
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap&subset=vietnamese"> -->
+</head>
+
+<body>
+    <header class="head">
+        <div class="nav">
+            
+        </div>
+    </header>
+    <div class="container">
+        <div class="block-container">
+            <h1 class="header-container">1. Change content <button onclick="open_modal_1()">Open</button> <button onclick="close_modal_1()">close</button></h1>
+            <div class="content-modal-1">
+                <h2>ID</h2>
+                <p id="demo-1">Đoạn văn chưa được thay đổi</p>
+                <button type="button">Click để thay đổi</button>
+        
+                <h2>CLASS</h2>
+                <p class="demo-2">Đoạn văn chưa được thay đổi</p>
+                <button onclick="click_class()" type="button">Click để thay đổi</button>
+            </div>
+        </div>
+    
+        <div class="block-container">
+            <h1 class="header-container">2. Change attribute value & chang styles <button onclick="open_modal_2()">Open</button> <button
+                    onclick="close_modal_2()">close</button></h1>
+            <div class="content-modal-2">
+                <button onclick="pic_phequa(); p_phequa()" style="width: 100px; height: 40px;">phequa</button>
+                <button onclick="pic_cubinh(); p_cubinh()" style="width: 100px; height: 40px;">cubinh</button>
+                <br>
+                <button style="width: 100px; height: 40px;" onclick="bat_anh(); bat_p()">Bật ảnh</button>
+                <button style="width: 100px; height: 40px;" onclick="tat_anh(); tat_p()">Tắt ảnh</button>
+                <br>
+                <button onclick="bat_p()" style="width: 100px; height: 40px;">Bật mức độ</button>
+                <button onclick="tat_p()" style="width: 100px; height: 40px;">Tắt mức độ</button>
+                <br>
+                <Button onclick="color_p_red()" style="background-color: red; width: 48px; height: 40px;"></Button>
+                <Button onclick="color_p_black()" style="background-color: black; width: 48px; height: 40px"></Button>
+                <Button onclick="color_p_green()" style="background-color: green; width: 48px; height: 40px"></Button>
+                <Button onclick="color_p_yellow()" style="background-color: pink; width: 48px; height: 40px"></Button>
+                <br>
+                <p style="display: none;" class="mucdophe">phe qua anh em oi!!!</p>
+                <img class="pic" style="height: 500px; display: none;" src="/img/phequa.jpg" alt="">
+            </div>
+        </div>
+
+        <div class="block-container">
+            <h1 class="header-container">3. Form login <button onclick="open_modal_3()">Open</button> <button
+                onclick="close_modal_3()">close</button></h1>
+            <div class="content-modal-3">
+                <button onclick="login_modal()" class="container-btn login-btn">login</button>
+                <button onclick="register_modal()" class="container-btn register-btn">register</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- <button onclick="document.write(5+6)">click</button> -->
+</body>
+
+<!-- Form login -->
+<div  class="auth-modal login-modal_none">
+    <div onclick="close_btn_login_overlay()" class="auth-modal_overlay"></div>
+    <div class="auth-modal_body">
+        <i onclick=" close_btn_login()" class="close-modal fa-solid fa-rectangle-xmark"></i>
+        <div class="auth-head">
+            <i class="auth-head_icon fa-solid fa-right-to-bracket"></i>
+            <h1 class="auth-head_welcome">Welcome!</h1>
+            <h3 class="auth-head_note">Sign in to your account</h3>
+        </div>
+        <div class="auth-body">
+            <div class="auth-content">
+                <h2 class="auth-content_name">Name</h2>
+                <i class="fa-solid fa-user"></i>
+                <input class="auth-content_input" type="text">
+            </div>
+            <div class="auth-content">
+                <h2 class="auth-content_name">Password</h2>
+                <input class="auth-content_input" type="password">
+            </div>
+            <div class="auth-func">
+                <h3 class="auth-func_remember"><input type="checkbox" name="" id="">Remember me?</h3>
+                <a href="">forgot password?</a>
+            </div>
+        </div>
+        <div class="auth-btn">
+                <button>Login <i class="fa-solid fa-right-to-bracket"></i></button>
+        </div>
+    </div>
+</div>
+<!-- Form login -->
+
+<!-- Form Sign in -->
+<div class="auth-modal register-modal_none">
+    <div onclick="close_btn_register_overlay()" class="auth-modal_overlay"></div>
+    <div class="auth-modal_body_register">
+        <i onclick=" close_btn_register()" class="close-modal fa-solid fa-rectangle-xmark"></i>
+        <div class="auth-head">
+            <i class="auth-head_icon fa-solid fa-user-plus"></i>
+            <h1 class="auth-head_welcome">Create account!</h1>
+        </div>
+        <div class="auth-body">
+            <div class="auth-content">
+                <h2 class="auth-content_name">Name</h2>
+                <i class="fa-solid fa-user"></i>
+                <input class="auth-content_input" type="text">
+            </div>
+            <div class="auth-content">
+                <h2 class="auth-content_name">Email</h2>
+                <i class="fa-solid fa-envelope"></i>
+                <input class="auth-content_input" type="email">
+            </div>
+            <div class="auth-content">
+                <h2 class="auth-content_name">Password</h2>
+                <input class="auth-content_input" type="password">
+            </div>
+        </div>
+        <div class="auth-btn">
+                <button>Create <i class="fa-solid fa-right-to-bracket"></i></button>
+        </div>
+        <div class="auth-footer">
+            <p class="auth-footer_p">Or create account using social media!</p>
+            <div class="auth-footer_social">
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-twitter"></i></a>
+                <a href=""><i class="fa-brands fa-pinterest"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Form Sign in -->
+
+
+<script src="/js.js"></script>
+
+</html>
